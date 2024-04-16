@@ -9,7 +9,7 @@ def edit_cat_food(save_stats: dict[str, Any]) -> dict[str, Any]:
     cat_food = item.IntItem(
         name="Cat Food",
         value=item.Int(save_stats["cat_food"]["Value"]),
-        max_value=45000,
+        max_value=53000,
         bannable=item.Bannable(
             managed_item.ManagedItemType.CATFOOD, save_stats["inquiry_code"]
         ),
@@ -38,7 +38,7 @@ def edit_normal_tickets(save_stats: dict[str, Any]) -> dict[str, Any]:
     normal_tickets = item.IntItem(
         name="Normal Tickets",
         value=item.Int(save_stats["normal_tickets"]["Value"]),
-        max_value=2999,
+        max_value=99999,
     )
     normal_tickets.edit()
     save_stats["normal_tickets"]["Value"] = normal_tickets.get_value()
@@ -51,7 +51,7 @@ def edit_rare_tickets(save_stats: dict[str, Any]) -> dict[str, Any]:
     rare_tickets = item.IntItem(
         name="Rare Tickets",
         value=item.Int(save_stats["rare_tickets"]["Value"]),
-        max_value=299,
+        max_value=99999,
         bannable=item.Bannable(
             inquiry_code=save_stats["inquiry_code"],
             work_around='&Instead of editing rare tickets directly, use the "Normal Ticket Max Trade Progress" conversion feature instead! It is much more safe.',
@@ -69,7 +69,7 @@ def edit_platinum_tickets(save_stats: dict[str, Any]) -> dict[str, Any]:
     platinum_tickets = item.IntItem(
         name="Platinum Tickets",
         value=item.Int(save_stats["platinum_tickets"]["Value"]),
-        max_value=9,
+        max_value=99,
         bannable=item.Bannable(
             inquiry_code=save_stats["inquiry_code"],
             work_around="&Instead of editing platinum tickets, edit platinum shards instead! They are much more safe. 10 platinum shards = 1 platinum ticket",
@@ -85,7 +85,7 @@ def edit_platinum_shards(save_stats: dict[str, Any]) -> dict[str, Any]:
     """Handler for editing platinum shards"""
 
     ticket_amount = save_stats["platinum_tickets"]["Value"]
-    max_value = 99 - (ticket_amount * 10)
+    max_value = 999 - (ticket_amount * 10)
     platinum_shards = item.IntItem(
         name="Platinum Shards",
         value=item.Int(save_stats["platinum_shards"]["Value"]),
@@ -102,7 +102,7 @@ def edit_np(save_stats: dict[str, Any]) -> dict[str, Any]:
     nyanko_points = item.IntItem(
         name="NP",
         value=item.Int(save_stats["np"]["Value"]),
-        max_value=9999,
+        max_value=99999999,
     )
     nyanko_points.edit()
     save_stats["np"]["Value"] = nyanko_points.get_value()
@@ -115,7 +115,7 @@ def edit_leadership(save_stats: dict[str, Any]) -> dict[str, Any]:
     leadership = item.IntItem(
         name="Leadership",
         value=item.Int(save_stats["leadership"]["Value"]),
-        max_value=9999,
+        max_value=99999999,
     )
     leadership.edit()
     save_stats["leadership"]["Value"] = leadership.get_value()
@@ -135,7 +135,7 @@ def edit_battle_items(save_stats: dict[str, Any]) -> dict[str, Any]:
             "Sniper the Cat",
         ],
         values=save_stats["battle_items"],
-        maxes=9999,
+        maxes=999999,
         group_name="Battle Items",
     )
     battle_items.edit()
@@ -150,7 +150,7 @@ def edit_engineers(save_stats: dict[str, Any]) -> dict[str, Any]:
     engineers = item.IntItem(
         name="Ototo Engineers",
         value=item.Int(save_stats["engineers"]["Value"]),
-        max_value=5,
+        max_value=99,
     )
     engineers.edit()
     save_stats["engineers"]["Value"] = engineers.get_value()
@@ -167,7 +167,7 @@ def edit_catamins(save_stats: dict[str, Any]) -> dict[str, Any]:
             "Catamin C",
         ],
         values=save_stats["catamins"],
-        maxes=9999,
+        maxes=999999,
         group_name="Catamins",
     )
     catamins.edit()
@@ -259,7 +259,7 @@ def edit_legend_tickets(save_stats: dict[str, Any]) -> dict[str, Any]:
     legend_tickets = item.IntItem(
         name="Legend Tickets",
         value=item.Int(save_stats["legend_tickets"]["Value"]),
-        max_value=4,
+        max_value=6,
         bannable=item.Bannable(
             inquiry_code=save_stats["inquiry_code"],
             type=managed_item.ManagedItemType.LEGEND_TICKET,
