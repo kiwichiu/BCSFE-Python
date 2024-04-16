@@ -53,7 +53,7 @@ def edit_catseyes(save_stats: dict[str, Any]) -> dict[str, Any]:
     catseyes = item.IntItemGroup.from_lists(
         names=get_catseye_names(helper.check_data_is_jp(save_stats)),
         values=save_stats["catseyes"],
-        maxes=9999,
+        maxes=999999,
         group_name="Catseyes",
     )
     catseyes.edit()
