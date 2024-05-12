@@ -259,7 +259,7 @@ def edit_legend_tickets(save_stats: dict[str, Any]) -> dict[str, Any]:
     legend_tickets = item.IntItem(
         name="Legend Tickets",
         value=item.Int(save_stats["legend_tickets"]["Value"]),
-        max_value=6,
+        max_value=10,
         bannable=item.Bannable(
             inquiry_code=save_stats["inquiry_code"],
             type=managed_item.ManagedItemType.LEGEND_TICKET,
