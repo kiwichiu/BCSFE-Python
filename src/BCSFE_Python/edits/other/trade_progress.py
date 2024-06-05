@@ -22,7 +22,7 @@ def set_trade_progress(save_stats: dict[str, Any]) -> dict[str, Any]:
     """Handler for editting trade progress to allow for unbannable rare tickets"""
 
     trade_progress = save_stats["trade_progress"]
-    max_value = helper.clamp(299 - save_stats["rare_tickets"]["Value"], 0, 299)
+    max_value = helper.clamp(9999 - save_stats["rare_tickets"]["Value"], 0, 9999)
     storage = save_stats["cat_storage"]
     tickets = item.IntItem(
         name="Rare Tickets",
